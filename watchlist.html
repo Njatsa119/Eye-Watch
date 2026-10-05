@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Watchtower · Watchlist</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="phone">
+
+  <div class="status-bar">
+    <div class="status-left" id="clk"></div>
+    <div class="status-right">
+      <span>📶</span><span>🛜</span>
+      <span class="battery"></span>
+    </div>
+  </div>
+
+  <div class="app">
+    <div class="topbar">
+      <div class="profile-dot"></div>
+      <div class="segmented">
+        <button class="segment active">Watchlist</button>
+        <a class="segment" href="index.html" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Dashboard</a>
+      </div>
+      <div class="top-icons">🔔</div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-head">
+        <span class="muted">Tracked value (sum of last prices)</span>
+        <button class="funds-btn">+ Add</button>
+      </div>
+      <div class="portfolio-amount">$<span id="totalValue">0.00</span></div>
+      <div class="portfolio-pnl">
+        <span class="pnl-text" id="pnlValue">+$0.00</span>
+        <span>today, est.</span>
+      </div>
+      <div class="quick-actions">
+        <div class="action-item"><span class="icon">⬆️</span><span>Send</span></div>
+        <div class="action-item"><span class="icon">⬇️</span><span>Receive</span></div>
+        <div class="action-item"><span class="icon">🔁</span><span>Swap</span></div>
+        <div class="action-item"><span class="icon">⚡</span><span>Alerts</span></div>
+      </div>
+    </div>
+
+    <div class="promo-banner">
+      <div class="promo-left">
+        <span class="promo-crown">👁️</span>
+        <span>Full signals & news live on the Dashboard</span>
+      </div>
+      <a class="promo-btn" href="index.html" style="text-decoration:none;color:inherit;">Open</a>
+    </div>
+
+    <div class="market-tabs">
+      <button class="market-tab active" data-category="all">All</button>
+      <button class="market-tab" data-category="crypto">Crypto</button>
+      <button class="market-tab" data-category="forex">Forex</button>
+      <button class="market-tab" data-category="stocks">Stocks</button>
+    </div>
+
+    <div class="watchlist-header">
+      <span>Asset</span>
+      <span style="text-align:right">Price</span>
+      <span style="text-align:center">24h</span>
+    </div>
+    <div class="watchlist" id="watchlist"></div>
+  </div>
+
+  <div class="bottom-nav">
+    <button class="nav-item active"><span class="icon">📊</span><span>Watchlist</span></button>
+    <a class="nav-item" href="index.html" style="text-decoration:none;color:inherit;"><span class="icon">⚡</span><span>Dashboard</span></a>
+    <button class="nav-item"><span class="icon">🔁</span><span>Swap</span></button>
+    <button class="nav-item"><span class="icon">⚠️</span><span>Alerts</span></button>
+    <button class="nav-item"><span class="icon">👤</span><span>Profile</span></button>
+  </div>
+
+</div>
+<script>
+(function(){ const t=()=>document.getElementById('clk').textContent=new Date().toLocaleTimeString([],{hour12:false}); t(); setInterval(t,1000); })();
+</script>
+<script src="app.js"></script>
+</body>
+</html>
